@@ -14,4 +14,5 @@ jobs:
     - name: output the memory
       run: |
         echo ${{ steps.hello.outputs.memory }}
+        echo ${{ secrets.AZURE_PUBLISH_PROFILE }}
         echo "total memory successfully output"
