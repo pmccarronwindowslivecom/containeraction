@@ -2,17 +2,19 @@ on: [push]
 
 jobs:
   my-job:
+    name: 'Job'
     runs-on: ubuntu-latest
 
     steps:
-    - name: 'Checkout V2'
+    - name: 'Step: Code Checkout'
       uses: actions/checkout@v2
-    - name: run the action
+      
+    - name: 'Step: Run the action'
       id: hello
       uses: ./
       with:
         myInput: 'Paul McCarron'
-    - name: output the memory
+    - name: 'Step: Output the memory'
       run: |
         echo ${{ steps.hello.outputs.memory }}
         echo "my secrets is =" ${{ secrets.AZURE_PUBLISH_PROFILE }}
